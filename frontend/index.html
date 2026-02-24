@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KirkNGR 6007 Panel de Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo">
+                <span class="brand">NGR</span> SYSTEMS
+            </div>
+            <div class="machine-info">
+                <h1>KirkNGR 6007</h1>
+                <div class="status-badge" id="statusBadge">OFFLINE</div>
+            </div>
+            <div class="header-time" id="clock">--:--:--</div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Control Section -->
+            <section class="control-panel">
+                <div class="control-group">
+                    <h2>Operaciones</h2>
+                    <div class="buttons">
+                        <button id="btnStart" class="btn btn-start">INICIAR</button>
+                        <button id="btnStop" class="btn btn-stop">DETENER</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metrics Grid -->
+            <section class="metrics-grid">
+                <div class="card metric-card">
+                    <div class="card-header">Bolsas / Minuto (BPM)</div>
+                    <div class="card-value" id="valBPM">0</div>
+                    <div class="card-footer">Velocidad Actual</div>
+                </div>
+
+                <div class="card metric-card">
+                    <div class="card-header">Producción (1h)</div>
+                    <div class="card-value" id="valProduction">0</div>
+                    <div class="card-footer">Bolsas Correctas</div>
+                </div>
+
+                <div class="card metric-card danger">
+                    <div class="card-header">Errores (1h)</div>
+                    <div class="card-value error-text" id="valErrorsHour">0</div>
+                    <div class="card-footer">Última Hora</div>
+                </div>
+
+                <div class="card metric-card">
+                    <div class="card-header">Total Errores</div>
+                    <div class="card-value" id="valErrorsTotal">0</div>
+                    <div class="card-footer">Desde Inicio</div>
+                </div>
+            </section>
+
+            <!-- Visualizer / Log Placeholder -->
+            <section class="visualizer">
+                <h3>Monitor de Sistema</h3>
+                <div class="console-log" id="consoleLog">
+                    <div class="log-entry">Sistema inicializado... Esperando conexión...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
